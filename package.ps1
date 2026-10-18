@@ -18,7 +18,7 @@ function Archive($name,$files){
     Write-Host ('Packaged: '+$path)
 }
 $source=@()
-foreach($name in @('README.md','LICENSE','THIRD_PARTY_NOTICES.md','dependencies.json','build.ps1','package.ps1','FlydigiTriggerBridge.sln','.gitignore')){
+foreach($name in @('README.md','LICENSE','THIRD_PARTY_NOTICES.md','dependencies.json','build.ps1','package.ps1','FlydigiTriggerBridge.sln','.gitignore','.gitattributes')){
     $source+=@{path=(Join-Path $root $name);entry=('FlydigiTriggerBridge/'+$name)}
 }
 foreach($folder in @('src','runtime','tools','docs','third_party','.github','drivers','tests')){

@@ -1,0 +1,3 @@
+# Keep source portable while preserving every pinned/signed installer payload byte.
+* text=auto
+/drivers/** -text
