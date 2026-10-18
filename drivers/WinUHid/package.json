@@ -1,0 +1,19 @@
+﻿{
+    "installed":  false,
+    "thumbprint":  "A6A3B8377E05F5B1669078720C5352B290698DD2",
+    "version":  "1.0.0.2",
+    "expiresUtc":  "2029-10-08T16:51:28.0000000Z",
+    "sourceCommit":  "d6cebbef5c7909168d1f881185be8f607d6aefd4",
+    "owner":  "FlydigiBridge",
+    "subject":  "CN=Flydigi Bridge Driver",
+    "selfSigned":  true,
+    "instanceId":  "ROOT\\WINUHID\\FLYDIGI_BRIDGE",
+    "files":  {
+                  "WinUHidDriver.inf":  "5f0cb46a561e5eaac34a703ab581d426c79220c3897790cf5bbbae8a62781713",
+                  "winuhiddriver.cat":  "112adeb3f507f455ccbad8ff320493dd3479d00411d28326ed7761a29a0cd2e7",
+                  "FlydigiBridgeDriver.cer":  "97c853e604ad5e092ff622b0c7c801effab4d06714f0441a201fcec999a12daf",
+                  "WinUHidDriver.dll":  "8f81f9cd1bfb657c23e49b0cfaae44fface7567ca7e9f316188cd20f3fdc9a8e",
+                  "DriverDevice.exe":  "7f52efb0245175f87ae65e92c97a6ecff64a273caaa1b77c7107eed908944da2",
+                  "LICENSE":  "89a57a9a583a1a54000016fb9c5322c6b0a9c0a8136e21a3c8c2bb18992c3a62"
+              }
+}

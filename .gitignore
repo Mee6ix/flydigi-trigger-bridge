@@ -1,0 +1,16 @@
+/build/
+/dist/
+/.cache/
+/local-data/
+**/bin/
+**/obj/
+**/.vs/
+*.user
+*.suo
+*.pfx
+*.cer
+!drivers/WinUHid/FlydigiBridgeDriver.cer
+*.log
+*.jsonl
+*.zip
+!docs/*.png

@@ -1,0 +1,115 @@
+;
+; WinUHidDriver.inf
+;
+
+[Version]
+Signature   = "$Windows NT$"
+Class       = System
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %ManufacturerName%
+CatalogFile = WinUHidDriver.cat
+DriverVer = 10/08/2026,1.0.0.2
+PnpLockdown = 1
+
+[Manufacturer]
+%ManufacturerName% = Standard, NTamd64.10.0...19041, NTamd64.10.0...22000
+
+[Standard.NTamd64.10.0...19041]
+%DeviceName% = WinUHid_Win10, Root\WinUHid
+
+[Standard.NTamd64.10.0...22000]
+%DeviceName% = WinUHid_Win11, Root\WinUHid
+
+[SourceDisksFiles]
+WinUHidDriver.dll = 1
+
+[SourceDisksNames]
+1 = %DiskName%
+
+[DestinationDirs]
+UMDriverCopy = 13
+
+; =================== Windows 11+ ===================================
+
+[WinUHid_Win11.NT]
+CopyFiles = UMDriverCopy
+Include = wudfrd.inf
+Include = hidvhf.inf
+Needs = WUDFRD_UpperFilter.NT
+Needs = vhfservice.NT
+
+[WinUHid_Win11.NT.HW]
+Include = wudfrd.inf
+Include = hidvhf.inf
+Needs = WUDFRD_UpperFilter.NT.HW
+Needs = vhfservice.NT.HW
+AddReg = WinUHid_AddReg
+
+[WinUHid_Win11.NT.Services]
+Include = wudfrd.inf
+Include = hidvhf.inf
+Needs = WUDFRD_UpperFilter.NT.Services
+Needs = vhfservice.NT.Services
+
+[WinUHid_Win11.NT.Filters]
+Include = WUDFRD.inf
+Needs = WUDFRD_UpperFilter.NT.Filters
+
+[WinUHid_Win11.NT.Wdf]
+UmdfService = WinUHidDriver,WinUHid_Install
+UmdfServiceOrder = WinUHidDriver
+
+; =================== Windows 10 ====================================
+
+[WinUHid_Win10.NT]
+CopyFiles = UMDriverCopy
+Include = hidvhf.inf
+Needs = vhfservice.NT
+
+[WinUHid_Win10.NT.HW]
+Include = hidvhf.inf
+Needs = vhfservice.NT.HW
+AddReg = WinUHid_AddReg
+
+[WinUHid_Win10.NT.Services]
+Include = hidvhf.inf
+Needs = vhfservice.NT.Services
+AddService = WUDFRd,0x1f8,WUDFRD_ServiceInstall
+
+[WinUHid_Win10.NT.Filters]
+AddFilter = WUDFRd,,WUDFRD_UpperFilterPosition
+
+[WinUHid_Win10.NT.Wdf]
+UmdfService = WinUHidDriver,WinUHid_Install
+UmdfServiceOrder = WinUHidDriver
+
+[WUDFRD_UpperFilterPosition]
+FilterPosition = Upper
+
+[WUDFRD_ServiceInstall]
+DisplayName = %WudfRdDisplayName%
+ServiceType = 1
+StartType = 3
+ErrorControl = 1
+ServiceBinary = %12%\WUDFRd.sys
+
+; =================== Generic ==================================
+
+[WinUHid_Install]
+UmdfLibraryVersion = 2.15.0
+ServiceBinary = %13%\WinUHidDriver.dll
+
+[WinUHid_AddReg]
+; Only allow access to our device object by admins or other UMDF drivers
+; otherwise emulated HID devices could be used to bypass UIPI.
+HKR,,Security,,"D:P(A;;GA;;;BA)(A;;GA;;;SY)(A;;GA;;;UD)"
+
+[UMDriverCopy]
+WinUHidDriver.dll
+
+[Strings]
+ManufacturerName = "Flydigi Bridge Driver"
+DiskName = "WinUHidDriver Installation Disk"
+DeviceName ="WinUHid Virtual HID Enumerator"
+
+WudfRdDisplayName="Windows Driver Foundation - User-mode Driver Framework Reflector"

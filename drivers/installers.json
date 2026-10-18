@@ -1,0 +1,23 @@
+{
+  "VCRuntime": {
+    "version": "x64",
+    "file": "VCRuntime/vc_redist.x64.exe",
+    "source": "https://aka.ms/vs/17/release/vc_redist.x64.exe",
+    "sha256": "cc0ff0eb1dc3f5188ae6300faef32bf5beeba4bdd6e8e445a9184072096b713b",
+    "thumbprint": "8F985BE8FD256085C90A95D3C74580511A1DB975"
+  },
+  "HidHide": {
+    "version": "1.5.230",
+    "file": "HidHide/HidHide_1.5.230_x64.exe",
+    "source": "https://github.com/nefarius/HidHide/releases/tag/v1.5.230.0",
+    "sha256": "f4bbbcb82e6258641b887c74bc81c4c5f66e4aa811808dfc304347687b7605f6",
+    "thumbprint": "1F431092EC96A80B41AB5317F53AC02EA6F9B89B"
+  },
+  "GameInput": {
+    "version": "3.5.270",
+    "file": "GameInput/GameInputRedist.msi",
+    "source": "https://api.nuget.org/v3-flatcontainer/microsoft.gameinput/3.5.270/microsoft.gameinput.3.5.270.nupkg",
+    "sha256": "081557994b51947d0759fb1991760c4cd9a8de349f9cf0fc72881acc98b2c64a",
+    "thumbprint": "3299B8814227C197629707881382511A0A5703E8"
+  }
+}

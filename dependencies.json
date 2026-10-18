@@ -1,0 +1,14 @@
+{
+  "winUHid": {
+    "repository": "https://github.com/cgutman/WinUHid",
+    "commit": "d6cebbef5c7909168d1f881185be8f607d6aefd4",
+    "license": "MIT",
+    "vendored": true
+  },
+  "gameInputHeader": {
+    "url": "https://raw.githubusercontent.com/microsoftconnect/GameInput/9b8fc167466ec09a710bb48beae4fdf85e8330b5/include/GameInput.h",
+    "sha256": "17e83b2de0fd074ed2faca8ca3bbc88a5a074ca2672cabc2afe9c38ee61064f1",
+    "licenseUrl": "https://github.com/microsoftconnect/GameInput/blob/main/LICENSE",
+    "vendored": false
+  }
+}
